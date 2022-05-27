@@ -1,5 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
+<% content_for :title do %>
+  Logged &ndash; <%= @entry.created_at %>
+  <% end %>
 <%= render @entry %>
 
 <div>
