@@ -1,13 +1,19 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title do %>
-  Logged &ndash; <%= @entry.created_at %>
-  <% end %>
-<%= render @entry %>
-
-<div>
-  <%= link_to "Edit this entry", edit_entry_path(@entry) %> |
-  <%= link_to "Back to entries", entries_path %>
-
-  <%= button_to "Destroy this entry", @entry, method: :delete %>
+  Recorded &ndash; <%= @entry.created_at.to_s(:nice_date)  %>
+<% end %>
+<div class="columns mt-2 is-centered">
+  <div class="card has-background-info m-5">
+    <div class="card-content p-0 pb-4">
+      <p class="has-text-info-light has-background-info-dark is-size-1 mb-2 pl-3"><%= @entry.meal_type %></p>
+      <p class="has-text-info-light is-size-4 mb-2 ml-5">Calories: <%= @entry.calories %></p>
+      <p class="has-text-info-light is-size-4 mb-2 ml-5">Proteins: <%= @entry.proteins %></p>
+      <p class="has-text-info-light is-size-4 mb-2 ml-5">Carbohydrates: <%= @entry.carbohydrates %></p>
+      <p class="has-text-info-light is-size-4 mb-2 ml-5">Fats: <%= @entry.fats %></p>
+    </div>
+    <div class="card-footer has-background-light is-justify-content-space-around">
+      <%= link_to "Edit this meal", edit_entry_path(@entry), class:"button is-warning is-light" %>
+      <%= link_to "Back to meals", entries_path, class:"button is-info is-light" %>
+      <%= button_to "Delete this meal", @entry, method: :delete, class:"button is-danger is-light" %>
+    </div>
+  </div>
 </div>

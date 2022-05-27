@@ -1,14 +1,31 @@
 <% content_for :title do %>
   Meals logged &ndash; <%= @entries.length %>
-  <% end %>
-
-<div id="entries">
-  <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
-  <% end %>
+<% end %>
+<div class="columns mt-6 is-centered">
+  <table class="table is-bordered is-centered">
+    <thead>
+      <th class="has-background-info-dark has-text-light has-text-centered"></th>
+      <th class="has-background-info-dark has-text-light has-text-centered">Type</th>
+      <th class="has-background-info-dark has-text-light has-text-centered">Calories</th>
+      <th class="has-background-info-dark has-text-light has-text-centered">Proteins</th>
+      <th class="has-background-info-dark has-text-light has-text-centered">Carbohydrates</th>
+      <th class="has-background-info-dark has-text-light has-text-centered">Fats</th>
+      <th class="has-background-info-dark has-text-light has-text-centered">Recorded</th>
+    </thead>
+    <% @entries.each do |entry| %>
+      <tbody >
+        <tr>
+          <td class="p-0">
+            <%= link_to "Inspect", entry, class:"button is-warning is-light p-5"%>
+          </td>
+          <td class="has-text-centered has-text-light has-background-info"><%= entry.meal_type%></td>
+          <td class="has-text-centered has-text-light has-background-info"><%= entry.calories%></td>
+          <td class="has-text-centered has-text-light has-background-info"><%= entry.proteins%></td>
+          <td class="has-text-centered has-text-light has-background-info"><%= entry.carbohydrates%></td>
+          <td class="has-text-centered has-text-light has-background-info"><%= entry.fats%></td>
+          <td class="has-text-centered has-text-light has-background-info"><%= time_ago_in_words(entry.created_at)%> ago</td>
+        </tr>
+      </tbody>
+    <%end%>
+  </table>
 </div>
-
-<%= link_to "New entry", new_entry_path %>
