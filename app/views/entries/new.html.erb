@@ -1,8 +1,9 @@
 <% content_for :title do %>
   New Meal!
 <%end%>
-<%= render "form", entry: @entry %>
-<br>
-<div>
-  <%= link_to "Back to meals", entries_path, class:"button is-info" %>
+<div class="columns is-centered mt-5">
+  <div class="column is-one-quarter">
+    <%= render "form", entry: @entry %>
+    <%= link_to "Back to meals", entries_path, class:"button is-info" %>
+  </div>
 </div>

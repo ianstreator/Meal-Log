@@ -9,22 +9,10 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.text_field :meal_type, placeholder:"Meal Type", class:"input p-1 m-2" %>
-  </div>
-  <div>
-    <%= form.number_field :calories, placeholder:"Calories", class:"input p-1 m-2" %>
-  </div>
-  <div>
-    <%= form.number_field :proteins, placeholder:"Proteins", class:"input p-1 m-2" %>
-  </div>
-  <div>
-    <%= form.number_field :carbohydrates, placeholder:"Carbohydrates", class:"input p-1 m-2" %>
-  </div>
-  <div>
-    <%= form.number_field :fats, placeholder:"Fats", class:"input p-1 m-2" %>
-  </div>
-  <div>
-    <%= form.submit class:"button is-success" %>
-  </div>
+  <%= form.text_field :meal_type, placeholder:"Meal Type", class:"input p-1 mb-2" %>
+  <%= form.number_field :calories, placeholder:"Calories", class:"input p-1 mb-2" %>
+  <%= form.number_field :proteins, placeholder:"Proteins", class:"input p-1 mb-2" %>
+  <%= form.number_field :carbohydrates, placeholder:"Carbohydrates", class:"input p-1 mb-2" %>
+  <%= form.number_field :fats, placeholder:"Fats", class:"input p-1 mb-2" %>
+  <%= form.submit class:"button is-success mb-2" %>
 <% end %>

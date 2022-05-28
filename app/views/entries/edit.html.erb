@@ -1,10 +1,11 @@
 <% content_for :title do%>
   Editing Meal..
 <% end %>
-<%= render "form", entry: @entry %>
-<br>
-<div>
-  <%= link_to "Retain meal info", @entry, class:"button is-warning mb-5" %>
-  <br>
-  <%= link_to "Back to meals", entries_path, class:"button is-info mb-5" %>
+<div class="columns is-centered mt-5">
+  <div class="column is-one-quarter">
+    <%= render "form", entry: @entry %>
+    <%= link_to "Retain meal info", @entry, class:"button is-warning mb-2" %>
+    <br>
+    <%= link_to "Back to meals", entries_path, class:"button is-info mb-2" %>
+  </div>
 </div>
